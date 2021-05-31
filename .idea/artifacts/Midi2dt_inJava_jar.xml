@@ -1,12 +1,12 @@
 <component name="ArtifactManager">
-  <artifact build-on-make="true" name="Midi2dt_inJava:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Midi2dt_inJava_jar</output-path>
-    <root id="root">
-      <element id="archive" name="Midi2dt_inJava.jar">
-        <element id="module-output" name="Midi2dt_inJava" />
+  <artifact type="jar" build-on-make="true" name="Midi2dt_inJava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts</output-path>
+    <root id="archive" name="Midi2dt_inJava.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" />
       </element>
-      <element id="file-copy" path="$PROJECT_DIR$/darktable.cfg" />
-      <element id="artifact" artifact-name="unnamed" />
+      <element id="module-output" name="Midi2dt_inJava" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
     </root>
   </artifact>
 </component>
