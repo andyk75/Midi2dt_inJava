@@ -1,6 +1,8 @@
 # Midi2dt_inJava
 With this small java program you can control any software with you midi keyboard by the use of keyboard shortcuts.
 
+I started with the classical [midi2dt](https://github.com/antonio-m/midi2dt) in my mind, but I didn't like python and the way the configuration was used. So I started to build something similar with Java. 
+
 I started this software to interface the Behringer XTouch Mini, but any other keyboard should also work. I used this midi-keyboard to control darktable for raw-photo development. 
 
 ## Build
