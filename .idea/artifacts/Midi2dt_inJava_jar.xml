@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Midi2dt_inJava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Midi2dt_inJava_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Midi2dt_inJava.jar">
+        <element id="module-output" name="Midi2dt_inJava" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/darktable.cfg" />
+      <element id="artifact" artifact-name="unnamed" />
+    </root>
+  </artifact>
+</component>
