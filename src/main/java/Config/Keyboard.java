@@ -4,6 +4,15 @@ import java.awt.AWTException;
 import java.awt.Robot;
 
 import static java.awt.event.KeyEvent.*;
+import static java.awt.event.KeyEvent.VK_NUMPAD1;
+import static java.awt.event.KeyEvent.VK_NUMPAD2;
+import static java.awt.event.KeyEvent.VK_NUMPAD3;
+import static java.awt.event.KeyEvent.VK_NUMPAD4;
+import static java.awt.event.KeyEvent.VK_NUMPAD5;
+import static java.awt.event.KeyEvent.VK_NUMPAD6;
+import static java.awt.event.KeyEvent.VK_NUMPAD7;
+import static java.awt.event.KeyEvent.VK_NUMPAD8;
+import static java.awt.event.KeyEvent.VK_NUMPAD9;
 
 public class Keyboard {
 
@@ -41,6 +50,12 @@ public class Keyboard {
             SHIFTpressed = true;
         } else if ( characters.contains( "ENTER" )){
             doType(VK_ENTER);
+        } else if (characters.contains( "NUM" ) ){
+            int length = characters.length();
+            for (int i = 3; i < length; i++) {
+                char character = characters.charAt(i);
+                numtype(character);
+            }
         } else {
             int length = characters.length();
             for (int i = 0; i < length; i++) {
@@ -362,6 +377,61 @@ public class Keyboard {
                 break;
             case ' ':
                 doType(VK_SPACE);
+                break;
+            default:
+                throw new IllegalArgumentException("Cannot type character " + character);
+        }
+    }
+
+    public void numtype(char character) {
+        switch (character) {
+            case '0':
+                doType(VK_NUMPAD0);
+                break;
+            case '1':
+                doType(VK_NUMPAD1);
+                break;
+            case '2':
+                doType(VK_NUMPAD2);
+                break;
+            case '3':
+                doType(VK_NUMPAD3);
+                break;
+            case '4':
+                doType(VK_NUMPAD4);
+                break;
+            case '5':
+                doType(VK_NUMPAD5);
+                break;
+            case '6':
+                doType(VK_NUMPAD6);
+                break;
+            case '7':
+                doType(VK_NUMPAD7);
+                break;
+            case '8':
+                doType(VK_NUMPAD8);
+                break;
+            case '9':
+                doType(VK_NUMPAD9);
+                break;
+            case '-':
+                doType(VK_SUBTRACT);
+                break;
+            case '*':
+                doType(VK_MULTIPLY);
+                break;
+            case '.':
+                doType(VK_DECIMAL);
+                break;
+            case '/':
+                doType(VK_DIVIDE);
+                break;
+            case '+':
+                doType(VK_ADD);
+                break;
+            case '\n':  // funktioniert nicht für das ENTER im NUMPAD.
+                doType(VK_ENTER);
                 break;
             default:
                 throw new IllegalArgumentException("Cannot type character " + character);

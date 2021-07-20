@@ -19,6 +19,7 @@ public class Midi2dt_inJava implements GetConfiguration {
     public static void main(String[] arg)  {
         Midi2dt_inJava MainClass = new Midi2dt_inJava();
         Boolean ConfigFileProvided = false;
+        Boolean DumpMidiKeys = false;
         String DefaultMidiName = "MINI";    // For the XTouch Mini
 
         System.out.println( "Working Directory = " + System.getProperty( "user.dir" ) );
@@ -31,7 +32,13 @@ public class Midi2dt_inJava implements GetConfiguration {
             } else if ( parameter.startsWith("-midi") ){
                 // Argument is name for midi device
                 DefaultMidiName = parameter.substring( parameter.indexOf("=") + 1 );
+            } else if ( parameter.startsWith("-dump") ){
+                DumpMidiKeys = true;
             }
+        }
+
+        if( !DumpMidiKeys ) {
+
         }
 
         if( !ConfigFileProvided ) {
