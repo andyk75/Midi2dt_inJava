@@ -18,6 +18,7 @@ public class Keyboard {
 
     private Robot robot;
     private boolean ALTpressed, STRGpressed, SHIFTpressed;
+    private final int KeyPressDelay = 10;
 
     public Keyboard() throws AWTException {
         this.robot = new Robot();
@@ -38,15 +39,15 @@ public class Keyboard {
     public void typeAltStrgShift(String characters) {
         if (characters.contains("ALT")) {
             robot.keyPress(VK_ALT);
-            robot.delay(100);
+            robot.delay( KeyPressDelay );
             ALTpressed = true;
         } else if (characters.contains("STRG")) {
             robot.keyPress(VK_CONTROL);
-            robot.delay(100);
+            robot.delay( KeyPressDelay );
             STRGpressed = true;
         } else if (characters.contains("SHIFT")) {
             robot.keyPress(VK_SHIFT);
-            robot.delay(100);
+            robot.delay( KeyPressDelay );
             SHIFTpressed = true;
         } else if ( characters.contains( "ENTER" )){
             doType(VK_ENTER);
@@ -69,15 +70,15 @@ public class Keyboard {
     public void releaseModifierkeys(){
         if( ALTpressed ) {
             robot.keyRelease(VK_ALT);
-            robot.delay(50);
+            robot.delay( KeyPressDelay );
         }
         if( STRGpressed ){
             robot.keyRelease(VK_CONTROL);
-            robot.delay(50);
+            robot.delay( KeyPressDelay );
         }
         if( SHIFTpressed ){
             robot.keyRelease(VK_SHIFT);
-            robot.delay(50);
+            robot.delay( KeyPressDelay );
         }
         ALTpressed = false;
         STRGpressed = false;
